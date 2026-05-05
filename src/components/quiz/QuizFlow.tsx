@@ -590,6 +590,15 @@ const QuizFlow = ({ quizState, onAnswer, onBack, onComplete, liveCount }: QuizFl
                   value={sliderValue}
                   onChange={(e) => { setSliderValue(Number(e.target.value)); setSliderTouched(true); }}
                   className="w-full h-2 rounded-full appearance-none cursor-pointer bg-muted accent-primary"
+                  style={{
+								background: `linear-gradient(to right, #c25159 0%, #c25159 ${
+								  ((sliderValue - question.sliderConfig.min) / 
+								  (question.sliderConfig.max - question.sliderConfig.min)) * 100
+								}%, #f3f4f6 ${
+								  ((sliderValue - question.sliderConfig.min) / 
+								  (question.sliderConfig.max - question.sliderConfig.min)) * 100
+								}%, #f3f4f6 100%)`,
+							  }}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground font-body mt-2">
                   <span>{weightUnit === "lbs" ? question.sliderConfig.min : Math.round(question.sliderConfig.min / 2.205)} {weightUnit}</span>
