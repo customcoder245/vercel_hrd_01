@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Allow anon select for dashboard" ON public.quiz_events;

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- DM Sans loaded lazily after first paint to avoid render-blocking the LCP text.
+         System font stack is used for initial paint (defined in inline CSS below). -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Critical above-the-fold CSS inlined for fast FCP -->
+    <style>
+      :root{--background:30 15% 98%;--foreground:220 15% 15%;--primary:350 78% 55%;--primary-foreground:0 0% 100%;--muted-foreground:220 8% 46%;--honey:38 85% 55%;--gradient-hero:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))}
+      *,*::before,*::after{box-sizing:border-box;margin:0}
+      body{background:hsl(30 15% 98%);color:hsl(220 15% 15%);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+      .min-h-screen{min-height:100vh}.flex{display:flex}.flex-col{flex-direction:column}.flex-1{flex:1 1 0%}
+      .items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}
+      .gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-4{gap:1rem}
+      .container{width:100%;margin-left:auto;margin-right:auto}
+      .px-6{padding-left:1.5rem;padding-right:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-20{padding-top:5rem;padding-bottom:5rem}
+      .relative{position:relative}.absolute{position:absolute}.overflow-hidden{overflow:hidden}
+      .z-10{z-index:10}.max-w-2xl{max-width:42rem}
+      .text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}
+      .text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}
+      .mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-10{margin-bottom:2.5rem}
+      .rounded-xl{border-radius:.75rem}.rounded-full{border-radius:9999px}
+      .bg-white{background-color:#fff}.text-white{color:#fff}
+      .w-36{width:9rem}.w-full{width:100%}.h-auto{height:auto}.h-8{height:2rem}
+      .pointer-events-none{pointer-events:none}.hidden{display:none}
+      .bg-gradient-hero{background:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))}
+      .invert{filter:invert(1)}
+      @media(min-width:768px){.md\\:hidden{display:none}.md\\:block{display:block}.md\\:h-10{height:2.5rem}.md\\:text-5xl{font-size:3rem;line-height:1}.md\\:py-28{padding-top:7rem;padding-bottom:7rem}}
+    </style>
+
+    <!-- Preconnect to backend (used for tracking from first quiz step) -->
+    <link rel="preconnect" href="https://sztjlzpnipxgsjoujhpk.supabase.co" crossorigin />
+    <!-- Preconnect to ClickBank checkout so TLS handshake is done before the user clicks "buy".
+         Both the product subdomain (jackalbany_mediterr.pay.clickbank.net) and the canonical
+         pay.clickbank.net (which CB sometimes redirects through) are warmed up. -->
+    <link rel="dns-prefetch" href="//jackalbany_mediterr.pay.clickbank.net" />
+    <link rel="dns-prefetch" href="//pay.clickbank.net" />
+    <link rel="preconnect" href="https://jackalbany_mediterr.pay.clickbank.net" crossorigin />
+    <link rel="preconnect" href="https://pay.clickbank.net" crossorigin />
+
+    <title>Hormone Reset Diet</title>
+    <meta name="description" content="A personalized weight loss program for women 40+ designed to support hormone balance, reduce cravings, and restore steady energy.">
+    <meta name="author" content="Mediterranean Diet" />
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/065acafe-224e-4495-aee0-6553df4a6810?Expires=1773641771&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=k%2Fl9aWqHPSRHpgve7Zs5FIP%2F62g0IVRVXdZJjQG92Yzn1yzQxCnXiI8gYkVQeb3lSlkeFMzCtFB%2B0WFo7VMYjv5JHeRjDbSCuhvvbTUOwkPjv08JXzUrK57qn3sDNQQm%2FWvnPXwnXsopIUe2SB0PIFBJ06J9yuHtR5yL99jLiBPs5ekQ1ccEkOFNs2wt420vTOobJ9czSPwZaXUaOI%2FpGlKv10RNuT1EC%2B%2FDPBnC3u0x6B1V1zKLJTwHmWd614JovGeiNkG4jyUpSAChYZ3zHgnG%2BCu9zFcKYehW0gneN%2F8FyPLMLfVqqlLZyyspIXLViWYwQKjQWwcipwVaKRCwZQ%3D%3D">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MediterraneanPlan" />
+    
+    
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/065acafe-224e-4495-aee0-6553df4a6810?Expires=1773641771&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=k%2Fl9aWqHPSRHpgve7Zs5FIP%2F62g0IVRVXdZJjQG92Yzn1yzQxCnXiI8gYkVQeb3lSlkeFMzCtFB%2B0WFo7VMYjv5JHeRjDbSCuhvvbTUOwkPjv08JXzUrK57qn3sDNQQm%2FWvnPXwnXsopIUe2SB0PIFBJ06J9yuHtR5yL99jLiBPs5ekQ1ccEkOFNs2wt420vTOobJ9czSPwZaXUaOI%2FpGlKv10RNuT1EC%2B%2FDPBnC3u0x6B1V1zKLJTwHmWd614JovGeiNkG4jyUpSAChYZ3zHgnG%2BCu9zFcKYehW0gneN%2F8FyPLMLfVqqlLZyyspIXLViWYwQKjQWwcipwVaKRCwZQ%3D%3D">
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Stub fbq before GTM loads so tags that reference it don't throw -->
+  <script>
+    window.fbq=window.fbq||function(){(window.fbq.q=window.fbq.q||[]).push(arguments)};
+    window._fbq=window.fbq;
+  </script>
+
+  <!-- Google Tag Manager - deferred until first interaction or idle to keep
+       the main thread free for LCP. Conversion tags still fire reliably because
+       redirects to checkout already wait one tick (see PersonalizedPlan.tsx). -->
+  <script>
+    (function(){
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QTWV7WL');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(loadGTM, 1200); }, { timeout: 3000 });
+      } else {
+        window.addEventListener('load', function() { setTimeout(loadGTM, 2000); });
+      }
+      ['scroll','click','touchstart','keydown','mousemove'].forEach(function(e) {
+        document.addEventListener(e, loadGTM, {once: true, passive: true});
+      });
+    })();
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta property="og:title" content="Hormone Reset Diet">
+  <meta name="twitter:title" content="Hormone Reset Diet">
+  <meta property="og:description" content="A personalized weight loss program for women 40+ designed to support hormone balance, reduce cravings, and restore steady energy.">
+  <meta name="twitter:description" content="A personalized weight loss program for women 40+ designed to support hormone balance, reduce cravings, and restore steady energy.">
+</head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QTWV7WL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root">
+      <!-- Static HTML shell for instant FCP – replaced by React on hydration -->
+      <main>
+          <section class="min-h-screen flex flex-col bg-white overflow-hidden" style="min-height:100vh;display:flex;flex-direction:column;background:#fff" aria-label="Hormone Reset Diet Quiz">
+            <header style="padding:1rem 1.5rem 0.5rem">
+              <nav style="display:flex;align-items:flex-start;justify-content:space-between">
+                <span style="display:inline-block;height:3rem;width:12.5rem" aria-hidden="true"></span>
+              </nav>
+            </header>
+            <div style="flex:1;position:relative;overflow:hidden;padding:1.5rem 1.5rem;display:flex;flex-direction:column;justify-content:center">
+              <div style="width:100%;max-width:36rem;margin:0">
+                <h1 style="font-size:2rem;font-weight:700;line-height:1.08;margin-bottom:1.25rem;font-family:'DM Sans',system-ui,sans-serif;color:hsl(220 15% 15%);letter-spacing:-0.01em">Discover what happens<br />when you fix your hormones.</h1>
+                <p style="font-size:1.125rem;font-weight:600;margin-bottom:2rem;font-family:'DM Sans',system-ui,sans-serif;color:hsl(220 15% 15% / 0.8)">How much weight would you like to lose?</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:22rem">
+                  <span style="display:block;height:3.25rem;border-radius:9999px;background:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))" aria-hidden="true"></span>
+                  <span style="display:block;height:3.25rem;border-radius:9999px;background:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))" aria-hidden="true"></span>
+                  <span style="display:block;height:3.25rem;border-radius:9999px;background:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))" aria-hidden="true"></span>
+                  <span style="display:block;height:3.25rem;border-radius:9999px;background:linear-gradient(to right,hsl(340 80% 58%),hsl(4 80% 55%))" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+            <footer style="background:rgb(32,36,44);border-top:1px solid hsl(0 0% 100% / 0.1);padding:1rem 1.5rem">
+              <p style="text-align:center;font-size:0.75rem;color:hsl(0 0% 100% / 0.4);margin:0 0 0.5rem;font-family:'DM Sans',system-ui,sans-serif">© 2026 <a href="https://hormonereset.diet" style="color:inherit" target="_blank" rel="noopener noreferrer">hormonereset.diet</a>. All rights reserved. Results may vary depending on the individual.</p>
+              <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;font-size:0.75rem;color:hsl(0 0% 100% / 0.4);flex-wrap:wrap;font-family:'DM Sans',system-ui,sans-serif">
+                <a href="https://hormonereset.diet/privacy" style="color:inherit" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <span>|</span>
+                <a href="https://hormonereset.diet/terms" style="color:inherit" target="_blank" rel="noopener noreferrer">Product Support</a>
+              </div>
+            </footer>
+          </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Microsoft Clarity - deferred until after first interaction or idle.
+         Skipped on /results and /offer pages: by then the user has converted or
+         is about to, and Clarity replays add ~40KB + main-thread cost without
+         giving us new insight on those pages. -->
+    <script>
+      (function(){
+        var path = location.pathname || '';
+        if (path.indexOf('/results') === 0) return;
+        var clarityLoaded = false;
+        function loadClarity() {
+          if (clarityLoaded) return;
+          clarityLoaded = true;
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "w8v6yzjood");
+        }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() { setTimeout(loadClarity, 1500); });
+        } else {
+          window.addEventListener('load', function() { setTimeout(loadClarity, 2500); });
+        }
+        ['scroll','click','touchstart','keydown'].forEach(function(e) {
+          document.addEventListener(e, loadClarity, {once: true, passive: true});
+        });
+      })();
+    </script>
+    <!-- GTM and fbq stub are loaded eagerly in <head> above -->
+
+    <!-- Lazy-load DM Sans after first paint. System font stack renders the LCP text
+         instantly; DM Sans swaps in once downloaded with no layout shift on body copy. -->
+    <script>
+      (function(){
+        function loadFont() {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap';
+          document.head.appendChild(l);
+        }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadFont, { timeout: 1500 });
+        } else {
+          setTimeout(loadFont, 200);
+        }
+      })();
+    </script>
+
+  </body>
+</html>
